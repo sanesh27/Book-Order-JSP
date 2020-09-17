@@ -14,8 +14,9 @@ and open the template in the editor.
 }
 
 .btn {
-    color: cornflowerblue;
+    color: white;
     border: black solid 1px;
+    background-color: cornflowerblue;
 }
 
 
