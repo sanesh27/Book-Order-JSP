@@ -13,15 +13,22 @@ and open the template in the editor.
     padding:0;
 }
 
-.btn {
-    color: white;
-    border: black solid 1px;
-    background-color: cornflowerblue;
+body {
+    padding-top: 5%;
 }
 
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-.form-control {
-    width: 50%;
+#title {
+    margin: 5px 20px;
+}
+.form-control{
+    width: 100%;
 }
 
 

@@ -13,15 +13,26 @@
         <title>Registration Form</title>
     </head>
     <body>
-        <h1>User Registration Form</h1><br>
-        <form method="post" action="processRegistration.jsp">
-            User ID: <input type="text" name="userid" value=""><br>
-            Password: <input type="password" name="pwd" value=""><br>
-            Email ID: <input type="text" name="emailid" value=""><br>
-            <input type="submit" value="Submit">
-            <input type="reset" Value="Reset">
+        <div class="flex-container">
+        <h3 id="title">User Registration Form</h3><br>
+        <form method="post" action="processRegistration.jsp">                       
+            <div class="form-group">
+                <label for="exampleInputName">User ID</label>
+                <input type="text" name="userid" class="form-control" id="exampleInputName">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword">Password</label>
+                <input type="password" name="pwd" class="form-control" id="exampleInputPassword">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail">Email ID</label>
+                <input type="text" name="emailid" class="form-control" id="exampleInputEmail">
+            </div>
+            <button type="submit" class="btn btn-default">Login</button>
+            <input class="btn btn-primary" type="reset" value="Reset">
             <br>
-            <h1>Already Registered? </h1> <a href="index.jsp">Click here</a>
+            <p>Already Registered?<a href="index.jsp"> Click here! </a></p>
         </form>
+        </div>
     </body>
 </html>
