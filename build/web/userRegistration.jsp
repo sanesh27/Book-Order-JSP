@@ -10,11 +10,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="form.css">
         <title>Registration Form</title>
     </head>
     <body>
         <div class="flex-container">
-        <h3 id="title">User Registration Form</h3><br>
+        <h3 id="title">Create account</h3><br>
         <form method="post" action="processRegistration.jsp">                       
             <div class="form-group">
                 <label for="exampleInputName">User ID</label>
@@ -28,10 +29,11 @@
                 <label for="exampleInputEmail">Email ID</label>
                 <input type="text" name="emailid" class="form-control" id="exampleInputEmail">
             </div>
-            <button type="submit" class="btn btn-default">Login</button>
+            
+            <button type="submit" class="btn btn-primary">Login</button>
             <input class="btn btn-primary" type="reset" value="Reset">
-            <br>
-            <p>Already Registered?<a href="index.jsp"> Click here! </a></p>
+            <hr>
+            <p>Already have an account?<a href="index.jsp"> Click here! </a></p>
         </form>
         </div>
     </body>
