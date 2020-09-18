@@ -36,9 +36,8 @@
 <div class="nav-container">
     <a id="dash" href="dashboard.jsp">Dashboard</a>
     <div class="dropdown">
-        <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a>
-        <div class="dropdown-content">
-             
+        <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw" aria-hidden="false"></i>
+        <div class="dropdown-content"> 
             <a href="loginInfo.jsp">Profile</a>
             <a href="logout.jsp">Logout</a>
         </div>
