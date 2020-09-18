@@ -16,10 +16,18 @@
     <body>
         <div class="flex-container">
         <h3 id="title">Create account</h3><br>
-        <form method="post" action="processRegistration.jsp">                       
+        <form method="post" action="processRegistration.jsp"> 
             <div class="form-group">
-                <label for="exampleInputName">User ID</label>
-                <input type="text" name="userid" class="form-control" id="exampleInputName" value="">
+                <label for="exampleInputName">Full Name</label>
+                <input type="text" name="fname" class="form-control" id="exampleInputName" value="">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputAddress">Address</label>
+                <input type="text" name="address" class="form-control" id="exampleInputAddress" value="">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputUserName">User ID</label>
+                <input type="text" name="userid" class="form-control" id="exampleInputUserName" value="">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword">Password</label>

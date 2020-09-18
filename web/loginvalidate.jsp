@@ -55,6 +55,7 @@
             
             if(rs.next()){
             session.setAttribute("userid", username);
+            
             response.sendRedirect("dashboard.jsp");
             }
             else{

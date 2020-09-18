@@ -26,6 +26,8 @@
         <!--retrieve request parameter-->
         
         <%
+            String name = request.getParameter("fname");
+            String address = request.getParameter("address");
             String userid=request.getParameter("userid");
             String pwd=request.getParameter("pwd");
             String emailid=request.getParameter("emailid");
@@ -58,7 +60,8 @@
             Statement st=con.createStatement();
             
 //            execute the sql query and retrive the data in resultset rs
-           int i=st.executeUpdate("insert into USERINFO(userid, password, email) values('" +userid+"','"+hashedpassword.toString()+"','"+emailid+"')");
+           int i=st.executeUpdate("insert into USERINFO(userid, password, email, name, address) values('" +userid+"','"+hashedpassword.toString()+"','"+emailid+"','"
+                   +name+"','"+address+"')");
            if(i>0) {
            %>
            <h1> Registration Successful!</h1>
