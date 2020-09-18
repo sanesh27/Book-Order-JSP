@@ -38,14 +38,19 @@
 </div>
         
         <%@page import="java.sql.*" %>
-        <h2>Account Settings</h2>
-        <div class="prof-pic">
-            <img src="pp.png" alt="user profile image" class="img-thumbnail">
-            <p><%out.println(session.getAttribute("userid")); %></p>
+        <div id="top-section">
+            <h2>Account Settings</h2>
+            <button type="button" class="btn btn-info"><a href="editProfile.jsp" style="color: whitesmoke; right: 0%;"> Edit Profile </a></button>
         </div>
-        <br>
-        <div class="profile-container">
+        <div class="prof-section row">
+            <div class="prof-pic col-3">
+                <img src="pp.png" alt="user profile im age" class="img-thumbnail">
+                <p><%out.println(session.getAttribute("userid")); %></p>
+            </div>
             
+            <br>
+            <div class="profile-container col-9">
+                <hr>
                 <%
                     Connection conn=DriverManager.getConnection("jdbc:derby://localhost:1527/UserDB","sanish","admin123");
                         Statement stmt=conn.createStatement();
@@ -63,20 +68,21 @@
                 <p> <% 
                         out.println(session.getAttribute("userid"));                      
                     %> </p>                 
-            </div>
-            <br>
-            <div class="user-info">
-                <p>Email Id</p>
-                <p>
-                    <%
-                        ResultSet email ;
-                        email = stmt.executeQuery("Select email from userinfo where userid= '"+session.getAttribute("userid")+ "'");
-                        if(email.next()) {
-                        out.println(email.getString("email"));
-                        }
-                    %>
-                </p>
-            </div>
+                </div>
+                <hr>
+                <div class="user-info">
+                    <p>Email Id</p>
+                    <p>
+                        <%
+                            ResultSet email ;
+                            email = stmt.executeQuery("Select email from userinfo where userid= '"+session.getAttribute("userid")+ "'");
+                            if(email.next()) {
+                            out.println(email.getString("email"));
+                            }
+                        %>
+                    </p>
+                </div>
+                    <hr>
                 <% } else {
                     String output = "";
                     output = "Select userid, email, name, address  from userinfo where userid= '"+session.getAttribute("userid")+ "'";
@@ -84,30 +90,32 @@
                     rset = stmt.executeQuery(output);
                     while (rset.next()) {
                 %>
+                
                 <div class="user-info">
                     <p>Name</p>
                     <p><%= rset.getString("name") %></p>
                 </div>
+                <hr>
                 <div class="user-info">
                     <p>User Name</p>
                     <p><%= rset.getString("userid") %></p>
                 </div>
+                <hr>
                 <div class="user-info">
                     <p>Email ID</p>
                     <p><%= rset.getString("email") %></p>
                 </div>
+                <hr>
                 <div class="user-info">
                     <p>Address</p>
                     <p><%= rset.getString("address") %></p>
                 </div>
+                <hr>
                 <% }
-rset.close(); stmt.close();conn.close();} %>
+                    rset.close(); stmt.close();conn.close();
+                } %>
+            </div> 
+   <% } }%>
         </div>
-        
-        
-        
-        
-        
-        <% } }%>
     </body>
 </html>
