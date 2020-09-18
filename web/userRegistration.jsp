@@ -30,17 +30,18 @@
                 <input type="text" name="emailid" class="form-control" id="exampleInputEmail" value="">
             </div>
             
-            <button type="submit" class="btn btn-primary">Login</button>
-            <input class="btn btn-primary" id="btnReset" onClick="valueReset()" type="reset" value="Reset">
+            <button type="submit" class="btn btn-primary">Sign up</button>
+            <input class="btn btn-primary" onClick="valueReset()" type="reset" value="Reset">
             <hr>
             <p>Already have an account?<a href="index.jsp"> Click here! </a></p>
         </form>
         </div>
     </body>
     <script>
-//        const reset = document.getElementById("btnReset");
-        const input = document.getElementsByClassName("form-control");
+
+        const input = document.getElementsByClassName("form-control"); // gets all the elements with class name form-control
         
+        //function to reset the value
         function valueReset() {
             input.values() = "";
         }

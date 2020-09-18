@@ -14,6 +14,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="dashboard.css">
+        
     </head>
     <body>
         <!--validating user before loading page-->
@@ -24,10 +27,28 @@
             <h1>  You are not logged in!<br></h1> <a href='index.jsp'>Try again</a>
             <%}else{
             %>
-        Admin: <%=session.getAttribute("userid")%>
-        <a href='logout.jsp'>Sign off</></a>
-        <h1>Dashboard Page! </h1>
-        <a href='loginInfo.jsp'>Profile</></a><br>
+              
+<!--                <a href='logout.jsp'>Sign off</></a> 
+                <a href='loginInfo.jsp'>Profile</></a><br>
+            
+        <h1>Dashboard Page! </h1>-->
+        
+<div class="nav-container">
+    <a id="dash" href="dashboard.jsp">Dashboard</a>
+    <div class="dropdown">
+        <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a>
+        <div class="dropdown-content">
+             
+            <a href="loginInfo.jsp">Profile</a>
+            <a href="logout.jsp">Logout</a>
+        </div>
+    </div>
+</div>
+        
+        
+        
+        
+        
         <%@page import = "java.sql.*"%>
         <h2>List of Books Available</h2>
         <h3>Choose Author!</h3>
