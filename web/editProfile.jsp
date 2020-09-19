@@ -63,19 +63,43 @@
             </div>
         </div>
             <div id="pwd-container">
-            <h6>Change Password</h6>
-            <p><input class="btn btn-primary" onClick="resetFunction()" type="reset" value="Edit">            
-            </p>
-            
+                <h6>Change Password</h6>
+                <p id="pwdBtn"><input id="btnEdit" name="btnEdit" class="btn btn-primary" onClick="resetFunction()" type="reset" value="Edit">
+                    <input name="btnClose" id="btnClose" class="btn btn-primary" onClick="closeFunction()" type="reset" value="Close">    
+                </p>
             </div> 
-            <div id="pwd-change">
-                
+            <form action="pwdReset.jsp" method="POST">
+            <div id="pwd-change" style="margin-left: 27%;">
+                <div class="pwd-group">
+                    <label>Current Password</label>
+                    <input name="current-pwd" class="pwd-control" value="">
+                </div>
+                <div class="pwd-group">
+                    <label>New Password</label>
+                    <input style="margin-left: 21px" name="new-pwd" class="pwd-control" value="">
+                </div>
+                <div class="pwd-group">
+                    <label>Confirm Password</label>
+                    <input name="confirm-pwd" class="pwd-control" value="">
+                </div>
+                <input name="btnSubmit" class="btn btn-primary"  type="submit" value="Save Changes">
             </div>
-    <% } %>    
+            </form>    
+                <% } %>    
     </body>
-<!--    <script>
+    <script>
+        const closebtn = document.getElementById("btnClose");
+        const idP = document.getElementById("pwdBtn");
         function resetFunction() {
-            
+            document.getElementById("pwd-change").style.display = "block";
+            closebtn.style.display = "block";
+            document.getElementById('btnEdit').style.display = 'none';
         }
-    </script>-->
+        
+        function closeFunction() {
+            document.getElementById("pwd-change").style.display = "none";
+            document.getElementById('btnEdit').style.display = 'block';
+            document.getElementById('btnClose').style.display = 'none';
+        }
+    </script>
 </html>

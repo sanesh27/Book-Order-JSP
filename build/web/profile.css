@@ -81,4 +81,11 @@ and open the template in the editor.
     justify-content: space-between;
 }
 
+#pwd-change {
+    display: none;
+}
+
+#pwdBtn > input#btnClose {
+    display: none;
+}
 
