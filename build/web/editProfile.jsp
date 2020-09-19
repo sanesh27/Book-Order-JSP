@@ -68,19 +68,15 @@
                     <input name="btnClose" id="btnClose" class="btn btn-primary" onClick="closeFunction()" type="reset" value="Close">    
                 </p>
             </div> 
-            <form action="pwdReset.jsp" method="POST">
+            <form action="pwdReset.jsp" method="POST" onsubmit="return validatePwd()">
             <div id="pwd-change" style="margin-left: 27%;">
                 <div class="pwd-group">
-                    <label>Current Password</label>
-                    <input name="current-pwd" class="pwd-control" value="">
-                </div>
-                <div class="pwd-group">
                     <label>New Password</label>
-                    <input style="margin-left: 21px" name="new-pwd" class="pwd-control" value="">
+                    <input id="newp" type="password" style="margin-left: 21px" name="new-pwd" class="pwd-control" value="">
                 </div>
                 <div class="pwd-group">
                     <label>Confirm Password</label>
-                    <input name="confirm-pwd" class="pwd-control" value="">
+                    <input id="confirmp" type="password" name="confirm-pwd" class="pwd-control" value="">
                 </div>
                 <input name="btnSubmit" class="btn btn-primary"  type="submit" value="Save Changes">
             </div>
@@ -101,5 +97,19 @@
             document.getElementById('btnEdit').style.display = 'block';
             document.getElementById('btnClose').style.display = 'none';
         }
+        
+
+        
+        function validatePwd() {
+                    const newp = document.getElementById("newp");
+        const confirmp = document.getElementById("confirmp");
+        
+            if(newp.value !== confirmp.value){
+                alert("Conformed password does not match!!!");
+                confirmp.value = "";
+                return false;
+            }
+        }
+        
     </script>
 </html>
